@@ -1,6 +1,5 @@
 package pl.adcom.ui.text;
 
-import pl.adcom.domain.guest.Gender;
 import pl.adcom.domain.guest.Guest;
 import pl.adcom.domain.guest.GuestService;
 import pl.adcom.domain.room.Room;
@@ -13,8 +12,8 @@ import java.util.Scanner;
 
 public class TextUI {
 
-    private RoomService roomService = new RoomService();
-    private GuestService guestService = new GuestService();
+    private final RoomService roomService = new RoomService();
+    private final GuestService guestService = new GuestService();
 
     private void readNewGuestData(Scanner input) {
         System.out.println("Wybrano opcję 1.");
@@ -28,13 +27,18 @@ public class TextUI {
             int age = input.nextInt();
             System.out.println("Podaj płeć : 1. Mężczyzna, 2. Kobieta");
             int genderOption = input.nextInt();
-            Gender gender = Gender.FAMALE;
 
             if (genderOption != 1 && genderOption != 2) {
                 throw new WrongOptionException("Wrong option in gender selection");
             }
 
-            Guest newGuest = guestService.createNewGuest(firstName, lastName, age, genderOption);
+            boolean isMale = false;
+
+            if(genderOption==1){
+                isMale = true;
+            }
+
+            Guest newGuest = guestService.createNewGuest(firstName, lastName, age, isMale);
 
             System.out.println(newGuest.getInfo());
         } catch (InputMismatchException e) {
@@ -60,9 +64,10 @@ public class TextUI {
     }
 
     private int[] chooseBedType(Scanner in) {
-        System.out.printf("Ile łóżek w pokoju ? ");
+        System.out.print("Ile łóżek w pokoju ? ");
 
-        int numberBed = in.nextInt();
+        int numberBed;
+        numberBed = in.nextInt();
 
         int[] bedTypes = new int[numberBed];
 
@@ -94,7 +99,6 @@ public class TextUI {
     public void showMainMenu() {
 
         Scanner input = new Scanner(System.in);
-        String info;
 
         try {
             performAction(input);
@@ -132,7 +136,7 @@ public class TextUI {
         System.out.println("3. Wyszukaj gościa.");
         System.out.println("Wybierz opcję: ");
 
-        int actionNumber = 0;
+        int actionNumber;
 
         try {
             actionNumber = in.nextInt();

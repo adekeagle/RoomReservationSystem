@@ -2,10 +2,10 @@ package pl.adcom.domain.guest;
 
 public class Guest {
 
-    private String firstName;
-    private String lastName;
-    private int age;
-    private Gender gender;
+    private final String firstName;
+    private final String lastName;
+    private final int age;
+    private final Gender gender;
 
     Guest(String firstName, String lastName, int age, Gender gender) {
         this.firstName = firstName;
@@ -14,7 +14,7 @@ public class Guest {
         this.gender = gender;
     }
 
-    public String getInfo(){
-        return String.format("Dodano nowego gościa: %s %s (%d) %s", this.firstName, this.lastName, this.age, this.gender);
+    public String getInfo() {
+        return String.format("Dodano nowego gościa: %s %s (%d) %s (%s)", this.firstName, this.lastName, this.age, this.gender, this.gender);
     }
 }

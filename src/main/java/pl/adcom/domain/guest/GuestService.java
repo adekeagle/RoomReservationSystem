@@ -2,15 +2,13 @@ package pl.adcom.domain.guest;
 
 public class GuestService {
 
-    private GuestRepository repository = new GuestRepository();
+    private final GuestRepository repository = new GuestRepository();
 
-    public Guest createNewGuest(String firstName, String lastName, int age, int genderOption){
+    public Guest createNewGuest(String firstName, String lastName, int age, boolean isMale){
         Gender gender = Gender.FAMALE;
 
-        if(genderOption==1){
+        if(isMale){
             gender = Gender.MALE;
-        }else if(genderOption == 2){
-            gender = Gender.FAMALE;
         }
 
         return repository.createNewGuest(firstName, lastName, age, gender);
