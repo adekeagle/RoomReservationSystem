@@ -1,6 +1,10 @@
+package pl.adcom;
+
+import pl.adcom.ui.text.TextUI;
+
 public class App {
 
-    public static TextUI textUI = new TextUI();
+    private static TextUI textUI = new TextUI();
 
     public static void main(String[] args) {
 
@@ -13,21 +17,21 @@ public class App {
 
     }
 
-//    private static Gender chooseGenderType(Scanner in) {
+//    private static pl.adcom.domain.guest.Gender chooseGenderType(Scanner in) {
 //        System.out.println("Podaj płeć: ");
 //        System.out.println("\t1 - Kobieta");
 //        System.out.println("\t2 - Mężczyzna");
 //
-//        Gender gender = Gender.MALE;
+//        pl.adcom.domain.guest.Gender gender = pl.adcom.domain.guest.Gender.MALE;
 //
 //        int genderOption = in.nextInt();
 //
 //        if (genderOption == 1) {
-//            gender = Gender.FAMALE;
+//            gender = pl.adcom.domain.guest.Gender.FAMALE;
 //        } else if (genderOption == 2) {
-//            gender = Gender.MALE;
+//            gender = pl.adcom.domain.guest.Gender.MALE;
 //        } else {
-//            throw new WrongOptionException("Wrong option gender !!!");
+//            throw new pl.adcom.exceptions.WrongOptionException("Wrong option gender !!!");
 //        }
 //
 //        return gender;

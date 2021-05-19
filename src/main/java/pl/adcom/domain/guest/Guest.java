@@ -1,4 +1,4 @@
-package pl.adcom;
+package pl.adcom.domain.guest;
 
 public class Guest {
 
@@ -7,7 +7,7 @@ public class Guest {
     private int age;
     private Gender gender;
 
-    public Guest(String firstName, String lastName, int age, Gender gender) {
+    Guest(String firstName, String lastName, int age, Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;

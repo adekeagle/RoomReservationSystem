@@ -1,4 +1,4 @@
-package pl.adcom;
+package pl.adcom.domain.room;
 
 public enum BedType {
     SINGLE,

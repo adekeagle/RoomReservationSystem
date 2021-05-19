@@ -1,4 +1,4 @@
-package pl.adcom;
+package pl.adcom.exceptions;
 
 public abstract class ReservationCustomException extends RuntimeException {
 

@@ -1,11 +1,11 @@
-package pl.adcom;
+package pl.adcom.domain.room;
 
 public class Room {
 
     private int number;
     private BedType[] bedType;
 
-    public Room(int number, BedType[] bed) {
+    Room(int number, BedType[] bed) {
         this.number = number;
         this.bedType = bed;
     }

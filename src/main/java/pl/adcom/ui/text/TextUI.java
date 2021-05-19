@@ -1,17 +1,22 @@
-package pl.adcom;
+package pl.adcom.ui.text;
 
+import pl.adcom.domain.guest.Gender;
+import pl.adcom.domain.guest.Guest;
+import pl.adcom.domain.guest.GuestService;
 import pl.adcom.domain.room.Room;
 import pl.adcom.domain.room.RoomService;
+import pl.adcom.exceptions.OnlyNumberException;
+import pl.adcom.exceptions.WrongOptionException;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TextUI {
 
-    RoomService roomService = new RoomService();
-    GuestService guestService = new GuestService();
+    private RoomService roomService = new RoomService();
+    private GuestService guestService = new GuestService();
 
-    public void readNewGuestData(Scanner input) {
+    private void readNewGuestData(Scanner input) {
         System.out.println("Wybrano opcję 1.");
 
         try {
@@ -37,7 +42,7 @@ public class TextUI {
         }
     }
 
-    public void readNewRoomData(Scanner input) {
+    private void readNewRoomData(Scanner input) {
         System.out.println("Tworzymy nowy pokój: ");
         try {
             System.out.print("Podaj nr pokoju: ");

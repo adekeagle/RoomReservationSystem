@@ -1,4 +1,6 @@
-package pl.adcom;
+package pl.adcom.domain.room;
+
+import pl.adcom.exceptions.WrongOptionException;
 
 public class RoomService {
 

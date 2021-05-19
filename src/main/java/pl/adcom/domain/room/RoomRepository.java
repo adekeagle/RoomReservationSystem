@@ -1,8 +1,8 @@
-package pl.adcom;
+package pl.adcom.domain.room;
 
 public class RoomRepository {
 
-    public Room createNewRoom(int number, BedType[] bedTypes){
+    Room createNewRoom(int number, BedType[] bedTypes){
 
         return new Room(number, bedTypes);
     }
